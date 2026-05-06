@@ -48,7 +48,7 @@ To enable Nunchuk functionality on your board, add the following entry to the de
 Connect the Nunchuk to the I2C1 bus of the BeagleBone Black board (pins 17 and 18 of P9, see [pinout](https://docs.beagleboard.org/latest/boards/beaglebone/black/ch07.html#connector-p9)). The Nunchuk should show up at address 0x52:
 
 ```bash
-# i2cdetect -r 1
+$ sudo i2cdetect -r 1
 i2cdetect: WARNING! This program can confuse your I2C bus
 Continue? [y/N] y
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -65,13 +65,13 @@ Continue? [y/N] y
 Load the kernel module to verify the driver finds the device:
 
 ```bash
-# modprobe nunchuk
+$ sudo modprobe nunchuk
 ```
 
 Finally, run the `evtest` application to test the inputs:
 
 ```bash
-# evtest
+$ sudo evtest
 ```
 
 ## References
